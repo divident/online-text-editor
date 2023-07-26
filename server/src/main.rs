@@ -26,7 +26,7 @@ fn main() {
 
         let result: Package = bincode::deserialize(&buf).unwrap();
         println!("New connection from {}", stream.peer_addr().unwrap());
-        println!("{:?}", result);
+        println!("{:?}", String::from_utf8_lossy(&result.payload));
     }
 }
 
